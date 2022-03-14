@@ -1,0 +1,46 @@
+#!/bin/sh
+
+userresources="$XDG_CONFIG_HOME"/X11/Xresources
+usermodmap="$XDG_CONFIG_HOME"/X11/Xmodmap
+sysresources=/etc/X11/xinit/Xresources
+sysmodmap=/etc/X11/xinit/Xmodmap
+
+# merge in defaults and keymaps
+
+if [ -f $sysresources ]; then
+    xrdb -merge $sysresources
+fi
+
+if [ -f $sysmodmap ]; then
+    xmodmap $sysmodmap
+fi
+
+if [ -f "$userresources" ]; then
+    xrdb -merge "$userresources"
+fi
+
+if [ -f "$usermodmap" ]; then
+    xmodmap "$usermodmap"
+fi
+
+# start some nice programs
+
+if [ -d /etc/X11/xinit/xinitrc.d ] ; then
+ for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
+  [ -x "$f" ] && . "$f"
+ done
+ unset f
+fi
+
+# xmodmap /home/vash/.config/X11/Xmodmap
+# systemctl --user import-environment DISPLAY
+
+copyq &
+sh /home/vash/Machine/Wallpaper/wallpaper-fehbg &
+xsetroot -cursor_name left_ptr &
+picom --unredir-if-possible --vsync --use-ewmh-active-win --no-use-damage --fade-in-step=1 --fade-out-step=1 --fade-delta=0 --experimental-backends --blur-method gaussian -b &
+eval $(ssh-agent -s)  
+#xautolock -time 5 -locker slock -nowlocker slock -detectsleep -corners 000+ -cornerdelay 3 &
+ssh-add &
+
+exec dwm
