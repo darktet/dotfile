@@ -1,0 +1,132 @@
+# This file is parsed by pam_env module
+#
+# Syntax: simple "KEY=VAL" pairs on separate lines
+
+#Personal 
+EDITOR    DEFAULT=nvim
+TERMINAL  DEFAULT=st
+BROWSER   DEFAULT=google-chrome-stable
+HOME      DEFAULT=/home/@{PAM_USER}
+
+#IDK What
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=\@im=fcitx
+
+#Some Basic Most Importent 
+XDG_CONFIG_HOME        DEFAULT=${HOME}/.config
+XDG_DATA_HOME          DEFAULT=${HOME}/.local/share
+XDG_CACHE_HOME         DEFAULT=${HOME}/.cache
+XDG_STATE_HOME         DEFAULT=${HOME}/.local/state
+XDG_BIN_HOME           DEFAULT=${HOME}/.local/bin
+RUNLEVEL               DEFAULT=3
+BOOST_ROOT             DEFAULT=${HOME}/.local/include/boost
+LC_CTYPE               DEFAULT=en_US.UTF-8
+QT_QPA_PLATFORMTHEME   DEFAULT=qt5ct
+DUC_DATABASE           DEFAULT=${XDG_CACHE_HOME}/duc.db
+
+#System PATH
+#PATH DEFAULT=${PATH}:${XDG_BIN_HOME}/bin
+#PATH DEFAULT=${PATH}:${XDG_BIN_HOME}/rakudo
+PATH DEFAULT=${PATH}:/opt/teyjus
+PATH DEFAULT=${PATH}:/opt/bin
+PATH DEFAULT=${PATH}:${HOME}/.cabal/bin
+PATH DEFAULT=${PATH}:${HOME}/.local/bin
+PATH DEFAULT=${PATH}:/opt/cabal/1.20/bin
+PATH DEFAULT=${PATH}:/opt/ghc/7.8.4/bin
+#PATH DEFAULT=${PATH}:${XDG_BIN_HOME}/boost
+PATH DEFAULT=${PATH}:${XDG_STATE_HOME}/npm/bin
+PATH DEFAULT=${PATH}:/usr/include
+PATH DEFAULT=${PATH}:/usr/local/lib 
+PATH DEFAULT=${PATH}:${BOOST_ROOT}/stage/lib
+PATH DEFAULT=${PATH}:/opt/android-sdk/tools
+PATH DEFAULT=${PATH}:/opt/android-sdk/tools/bin
+PATH DEFAULT=${PATH}:/opt/android-sdk/platform-tools
+PATH DEFAULT=${PATH}:${CARGO_HOME}/bin
+PATH DEFAULT=${PATH}:${HOME}/Machine/bin
+
+
+#Python Releted 
+PYTHONPATH                     DEFAULT=${PYTHONPATH}:${HOME}/.local/lib/python3.10
+PYENV_HOME                     DEFAULT=${HOME}/.local/share/pyenv
+PYENV_ROOT                     DEFAULT=${HOME}/.local/share/pyenv
+IPYTHONDIR                     DEFAULT=${HOME}/.config/jupyter
+JUPYTER_CONFIG_DIR             DEFAULT=${HOME}/.config/jupyter
+PYTHONSTARTUP                  DEFAULT=${HOME}/.config/python/pythonrc.py
+PYLINTHOME                     DEFAULT=${HOME}/.cache/pylint
+
+#Java Releted 
+NVM_DIR                        DEFAULT=${HOME}/.local/share/nvm
+GRADLE_USER_HOME               DEFAULT=${HOME}/.local/share/gradle
+SDKMAN_DIR                     DEFAULT=${HOME}/.local/share/sdkman
+JAVA_HOME                      DEFAULT=/usr/lib/jvm/default
+
+#VCPKG Releted 
+VCPKG_DOWNLOADS                DEFAULT=${HOME}/.cache/vcpkg
+
+#C/C++ Releted         
+CPLUS_INCLUDE_PATH             DEFAULT=${CPLUS_INCLUDE_PATH}:/opt/vcpkg/installed/x64-linux/include
+CPLUS_INCLUDE_PATH             DEFAULT=${CPLUS_INCLUDE_PATH}:${HOME}/.local/include
+CMAKE_EXPORT_COMPILE_COMMANDS  DEFAULT=1
+
+#System Releted 
+GNUPGHOME                      DEFAULT=${HOME}/.local/share/gnupg
+#XINITRC                        DEFAULT=${HOME}/.config/X11/xinitrc
+#XSERVERRC                      DEFAULT=${HOME}/.config/X11/xserverrc
+XAUTHORITY                     DEFAULT=${XDG_RUNTIME_DIR}/Xauthority
+SCREENRC                       DEFAULT=${HOME}/.config/screen/screenrc
+DOCKER_CONFIG                  DEFAULT=${HOME}/.config/docker
+CUDA_CACHE_PATH                DEFAULT=${HOME}/.cache/nv
+GTK2_RC_FILES                  DEFAULT=${HOME}/.config/gtk-2.0/gtkrc
+WINEPREFIX                     DEFAULT=${HOME}/.local/share/wineprefixes/default
+AZURE_CONFIG_DIR               DEFAULT=${HOME}/.config/azure
+GTK_RC_FILES                   DEFAULT=${HOME}/.config/gtk-1.0/gtkrc
+
+#Android Releted 
+ANDROID_HOME                   DEFAULT=/opt/android-sdk
+ANDROID_SDK_ROOT               DEFAULT=/opt/android-sdk
+ANDROID_SDK                    DEFAULT=/opt/android-sdk
+ANDROID_AVD_HOME               DEFAULT=${HOME}/.local/share/android/avd
+ANDROID_PATH                   DEFAULT=/opt/android-sdk/tools:/opt/android-sdk/platform-tools
+ANDROID_EMULATOR_HOME          DEFAULT=${HOME}/.local/share/android
+ANDROID_SDK_HOME               DEFAULT=${HOME}/.local/share/android
+ADB_VENDOR_KEY                 DEFAULT=${HOME}/.local/share/android/keys
+
+#Some Other  (cargo, rust, g  em, go, haskell)
+CARGO_HOME                     DEFAULT=${HOME}/.local/share/cargo
+RUSTUP_HOME                    DEFAULT=${HOME}/.local/share/rustup
+GEM_HOME                       DEFAULT=${HOME}/.local/share/gem
+GOPATH                         DEFAULT=${HOME}/.local/share/go
+GEM_SPEC_CACHE                 DEFAULT=${HOME}/.cache/gem
+GHCUP_USE_XDG_DIRS             DEFAULT=true
+
+#IDK How I Put That
+PASSWORD_STORE_DIR             DEFAULT=${HOME}/.local/share/pass
+STACK_ROOT                     DEFAULT=${HOME}/.local/share/stack
+CABAL_CONFIG                   DEFAULT=${HOME}/.local/share/cabal/config
+WAKATIME_HOME                  DEFAULT=${HOME}/.local/share/wakatime
+
+#Terminal Releted 
+BDOTDIR                        DEFAULT=${HOME}/.config/bash
+ZDOTDIR                        DEFAULT=${HOME}/.config/zsh
+DOOMDIR                        DEFAULT=${HOME}/.config/doom
+LESSHISTFILE                   DEFAULT=${HOME}/.cache/less/history
+NODE_REPL_HISTORY              DEFAULT=${HOME}/.cache/node/repl_history
+LESSKEY                        DEFAULT=${HOME}/.config/less/lesskey
+INPUTRC                        DEFAULT=${HOME}/.config/readline/inputrc
+MOST_INITFILE                  DEFAULT=${HOME}/.config/most/mostrc
+NPM_CONFIG_USERCONFIG          DEFAULT=${HOME}/.config/npm/npmrc
+BASH_COMPLETION_USER_FILE      DEFAULT=${HOME}/.config/bash-completion/bash_completion
+GUILE_HISTORY                  DEFAULT=${HOME}/.cache/guile/history
+
+#Some Basic pkg 
+PQIVRC_PATH                    DEFAULT=${HOME}/.config/pqiv/pqivrc
+WGETRC                         DEFAULT=${HOME}/.config/wget/wgetrc
+
+#DataBase Releted 
+SQLITE_HISTORY                 DEFAULT=${HOME}/.cache/sqlite3/history
+MYSQL_HISTFILE                 DEFAULT=${HOME}/.cache/mysql/history
+PSQL_HISTORY                   DEFAULT=${HOME}/.cache/pg/psql_history
+PSQLRC                         DEFAULT=${HOME}/.config/pg/psqlrc
+PGSERVICEFILE                  DEFAULT=${HOME}/.config/pg_service.conf
+PGPASSFILE                     DEFAULT=${HOME}/.config/pgpass
