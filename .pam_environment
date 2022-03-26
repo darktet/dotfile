@@ -3,8 +3,8 @@
 # Syntax: simple "KEY=VAL" pairs on separate lines
 
 #Personal 
-EDITOR    DEFAULT=nvim
-TERMINAL  DEFAULT=st
+EDITOR    DEFAULT=/bin/nvim
+TERMINAL  DEFAULT=/usr/local/bin/st
 BROWSER   DEFAULT=google-chrome-stable
 HOME      DEFAULT=/home/@{PAM_USER}
 
@@ -24,27 +24,9 @@ BOOST_ROOT             DEFAULT=${HOME}/.local/include/boost
 LC_CTYPE               DEFAULT=en_US.UTF-8
 QT_QPA_PLATFORMTHEME   DEFAULT=qt5ct
 DUC_DATABASE           DEFAULT=${XDG_CACHE_HOME}/duc.db
-
-#System PATH
-#PATH DEFAULT=${PATH}:${XDG_BIN_HOME}/bin
-#PATH DEFAULT=${PATH}:${XDG_BIN_HOME}/rakudo
-PATH DEFAULT=${PATH}:/opt/teyjus
-PATH DEFAULT=${PATH}:/opt/bin
-PATH DEFAULT=${PATH}:${HOME}/.cabal/bin
-PATH DEFAULT=${PATH}:${HOME}/.local/bin
-PATH DEFAULT=${PATH}:/opt/cabal/1.20/bin
-PATH DEFAULT=${PATH}:/opt/ghc/7.8.4/bin
-#PATH DEFAULT=${PATH}:${XDG_BIN_HOME}/boost
-PATH DEFAULT=${PATH}:${XDG_STATE_HOME}/npm/bin
-PATH DEFAULT=${PATH}:/usr/include
-PATH DEFAULT=${PATH}:/usr/local/lib 
-PATH DEFAULT=${PATH}:${BOOST_ROOT}/stage/lib
-PATH DEFAULT=${PATH}:/opt/android-sdk/tools
-PATH DEFAULT=${PATH}:/opt/android-sdk/tools/bin
-PATH DEFAULT=${PATH}:/opt/android-sdk/platform-tools
-PATH DEFAULT=${PATH}:${CARGO_HOME}/bin
-PATH DEFAULT=${PATH}:${HOME}/Machine/bin
-
+WORKSPACE              DEFAULT=${XDG_CACHE_HOME}/Workspace
+ELINKS_CONFDIR         DEFAULT=${XDG_CONFIG_HOME}/elinks
+RANDFILE               DEFAULT=${HOME}/.ssh/rnd
 
 #Python Releted 
 PYTHONPATH                     DEFAULT=${PYTHONPATH}:${HOME}/.local/lib/python3.10
@@ -60,6 +42,7 @@ NVM_DIR                        DEFAULT=${HOME}/.local/share/nvm
 GRADLE_USER_HOME               DEFAULT=${HOME}/.local/share/gradle
 SDKMAN_DIR                     DEFAULT=${HOME}/.local/share/sdkman
 JAVA_HOME                      DEFAULT=/usr/lib/jvm/default
+JAVA_17_HOME                   DEFAULT=/usr/lib/jvm/java-17-openjdk
 
 #VCPKG Releted 
 VCPKG_DOWNLOADS                DEFAULT=${HOME}/.cache/vcpkg
@@ -74,6 +57,7 @@ GNUPGHOME                      DEFAULT=${HOME}/.local/share/gnupg
 #XINITRC                        DEFAULT=${HOME}/.config/X11/xinitrc
 #XSERVERRC                      DEFAULT=${HOME}/.config/X11/xserverrc
 XAUTHORITY                     DEFAULT=${XDG_RUNTIME_DIR}/Xauthority
+XDG_SESSION_TYPE               DEFAULT=x11
 SCREENRC                       DEFAULT=${HOME}/.config/screen/screenrc
 DOCKER_CONFIG                  DEFAULT=${HOME}/.config/docker
 CUDA_CACHE_PATH                DEFAULT=${HOME}/.cache/nv
@@ -130,3 +114,24 @@ PSQL_HISTORY                   DEFAULT=${HOME}/.cache/pg/psql_history
 PSQLRC                         DEFAULT=${HOME}/.config/pg/psqlrc
 PGSERVICEFILE                  DEFAULT=${HOME}/.config/pg_service.conf
 PGPASSFILE                     DEFAULT=${HOME}/.config/pgpass
+
+#System PATH
+#PATH DEFAULT=${PATH}:${XDG_BIN_HOME}/bin
+#PATH DEFAULT=${PATH}:${XDG_BIN_HOME}/rakudo
+#PATH DEFAULT=${PATH}:/opt/teyjus
+PATH DEFAULT=${PATH}:/opt/bin
+PATH DEFAULT=${PATH}:${HOME}/.cabal/bin
+PATH DEFAULT=${PATH}:${HOME}/.local/bin
+#PATH DEFAULT=${PATH}:/opt/cabal/1.20/bin
+#PATH DEFAULT=${PATH}:/opt/ghc/7.8.4/bin
+#PATH DEFAULT=${PATH}:${XDG_BIN_HOME}/boost
+PATH DEFAULT=${PATH}:${XDG_STATE_HOME}/npm/bin
+#PATH DEFAULT=${PATH}:/usr/include
+#PATH DEFAULT=${PATH}:/usr/local/lib 
+#PATH DEFAULT=${PATH}:${BOOST_ROOT}/stage/lib
+PATH DEFAULT=${PATH}:/opt/android-sdk/tools
+PATH DEFAULT=${PATH}:/opt/android-sdk/tools/bin
+PATH DEFAULT=${PATH}:/opt/android-sdk/platform-tools
+PATH DEFAULT=${PATH}:${CARGO_HOME}/bin
+PATH DEFAULT=${PATH}:${HOME}/Machine/bin
+
