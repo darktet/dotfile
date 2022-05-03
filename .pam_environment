@@ -43,7 +43,6 @@ PYLINTHOME                     DEFAULT=${HOME}/.cache/pylint
 _JAVA_OPTIONS                  DEFAULT=-Djava.util.prefs.userRoot=${XDG_CONFIG_HOME}/java
 SDKMAN_DIR                     DEFAULT=${HOME}/.local/share/sdkman
 JAVA_HOME                      DEFAULT=/usr/lib/jvm/default
-JAVA_17_HOME                   DEFAULT=/usr/lib/jvm/java-17-openjdk
 _JAVA_AWT_WM_NONREPARENTING    DEFAULT=1
 GRADLE_USER_HOME               DEFAULT=${XDG_DATA_HOME}/gradle
 
