@@ -20,13 +20,14 @@ XDG_CACHE_HOME         DEFAULT=${HOME}/.cache
 XDG_STATE_HOME         DEFAULT=${HOME}/.local/state
 XDG_BIN_HOME           DEFAULT=${HOME}/.local/bin
 RUNLEVEL               DEFAULT=3
-BOOST_ROOT             DEFAULT=${HOME}/.local/include/boost
+#BOOST_ROOT             DEFAULT=${HOME}/.local/include/boost
 LC_CTYPE               DEFAULT=en_US.UTF-8
 QT_QPA_PLATFORMTHEME   DEFAULT=qt5ct
 DUC_DATABASE           DEFAULT=${XDG_CACHE_HOME}/duc.db
 WORKSPACE              DEFAULT=${XDG_CACHE_HOME}/Workspace
 ELINKS_CONFDIR         DEFAULT=${XDG_CONFIG_HOME}/elinks
 RANDFILE               DEFAULT=${HOME}/.ssh/rnd
+TRASHDIR               DEFAULT=${XDG_CACHE_HOME}/Trash
 
 #Python Releted 
 PYTHONPATH                     DEFAULT=${PYTHONPATH}:${HOME}/.local/lib/python3.10
@@ -38,19 +39,26 @@ PYTHONSTARTUP                  DEFAULT=${HOME}/.config/python/pythonrc.py
 PYLINTHOME                     DEFAULT=${HOME}/.cache/pylint
 
 #Java Releted 
-NVM_DIR                        DEFAULT=${HOME}/.local/share/nvm
-GRADLE_USER_HOME               DEFAULT=${HOME}/.local/share/gradle
+#NVM_DIR                        DEFAULT=${HOME}/.local/share/nvm
+_JAVA_OPTIONS                  DEFAULT=-Djava.util.prefs.userRoot=${XDG_CONFIG_HOME}/java
 SDKMAN_DIR                     DEFAULT=${HOME}/.local/share/sdkman
 JAVA_HOME                      DEFAULT=/usr/lib/jvm/default
 JAVA_17_HOME                   DEFAULT=/usr/lib/jvm/java-17-openjdk
+_JAVA_AWT_WM_NONREPARENTING    DEFAULT=1
+GRADLE_USER_HOME               DEFAULT=${XDG_DATA_HOME}/gradle
 
 #VCPKG Releted 
-VCPKG_DOWNLOADS                DEFAULT=${HOME}/.cache/vcpkg
+VCPKG_ROOT                     DEFAULT=/opt/vcpkg
+VCPKG_DOWNLOADS                DEFAULT=/var/cache/vcpkg
 
 #C/C++ Releted         
-CPLUS_INCLUDE_PATH             DEFAULT=${CPLUS_INCLUDE_PATH}:/opt/vcpkg/installed/x64-linux/include
-CPLUS_INCLUDE_PATH             DEFAULT=${CPLUS_INCLUDE_PATH}:${HOME}/.local/include
+#CPLUS_INCLUDE_PATH             DEFAULT=${CPLUS_INCLUDE_PATH}:/opt/vcpkg/installed/x64-linux/include
+#CPLUS_INCLUDE_PATH             DEFAULT=${CPLUS_INCLUDE_PATH}:${HOME}/.local/include
+
+CPLUS_INCLUDE_PATH             DEFAULT=${CPLUS_INCLUDE_PATH}:/usr/include/c++/11.2.0
+
 CMAKE_EXPORT_COMPILE_COMMANDS  DEFAULT=1
+#CMAKE_TOOLCHAIN_FILE           DEFAULT=/opt/vcpkg/scripts/buildsystems/vcpkg.cmake
 
 #System Releted 
 GNUPGHOME                      DEFAULT=${HOME}/.local/share/gnupg
@@ -65,11 +73,15 @@ GTK2_RC_FILES                  DEFAULT=${HOME}/.config/gtk-2.0/gtkrc
 WINEPREFIX                     DEFAULT=${HOME}/.local/share/wineprefixes/default
 AZURE_CONFIG_DIR               DEFAULT=${HOME}/.config/azure
 GTK_RC_FILES                   DEFAULT=${HOME}/.config/gtk-1.0/gtkrc
+LIBGL_DRI3_DISABLE             DEFAULT=1
 
 #Android Releted 
+DOTNET_CLI_TELEMETRY_OPTOUT    DEFAULT=1
 ANDROID_HOME                   DEFAULT=/opt/android-sdk
 ANDROID_SDK_ROOT               DEFAULT=/opt/android-sdk
 ANDROID_SDK                    DEFAULT=/opt/android-sdk
+ANDROID_SDK_PATH               DEFAULT=/opt/android-sdk
+ANDROID_NDK_PATH               DEFAULT=/opt/android-sdk/ndk-bundle
 ANDROID_AVD_HOME               DEFAULT=${HOME}/.local/share/android/avd
 ANDROID_PATH                   DEFAULT=/opt/android-sdk/tools:/opt/android-sdk/platform-tools
 ANDROID_EMULATOR_HOME          DEFAULT=${HOME}/.local/share/android
@@ -91,6 +103,7 @@ CABAL_CONFIG                   DEFAULT=${HOME}/.local/share/cabal/config
 WAKATIME_HOME                  DEFAULT=${HOME}/.local/share/wakatime
 
 #Terminal Releted 
+PROMPT_EOL_MARK                DEFAULT=""
 BDOTDIR                        DEFAULT=${HOME}/.config/bash
 ZDOTDIR                        DEFAULT=${HOME}/.config/zsh
 DOOMDIR                        DEFAULT=${HOME}/.config/doom
@@ -100,12 +113,13 @@ LESSKEY                        DEFAULT=${HOME}/.config/less/lesskey
 INPUTRC                        DEFAULT=${HOME}/.config/readline/inputrc
 MOST_INITFILE                  DEFAULT=${HOME}/.config/most/mostrc
 NPM_CONFIG_USERCONFIG          DEFAULT=${HOME}/.config/npm/npmrc
+NVM_DIR                        DEFAULT=${XDG_DATA_HOME}/nvm
 BASH_COMPLETION_USER_FILE      DEFAULT=${HOME}/.config/bash-completion/bash_completion
 GUILE_HISTORY                  DEFAULT=${HOME}/.cache/guile/history
 
 #Some Basic pkg 
 PQIVRC_PATH                    DEFAULT=${HOME}/.config/pqiv/pqivrc
-WGETRC                         DEFAULT=${HOME}/.config/wget/wgetrc
+WGETRC                         DEFAULT=${HOME}/.config/wgetrc
 
 #DataBase Releted 
 SQLITE_HISTORY                 DEFAULT=${HOME}/.cache/sqlite3/history
@@ -119,19 +133,28 @@ PGPASSFILE                     DEFAULT=${HOME}/.config/pgpass
 #PATH DEFAULT=${PATH}:${XDG_BIN_HOME}/bin
 #PATH DEFAULT=${PATH}:${XDG_BIN_HOME}/rakudo
 #PATH DEFAULT=${PATH}:/opt/teyjus
-PATH DEFAULT=${PATH}:/opt/bin
-PATH DEFAULT=${PATH}:${HOME}/.cabal/bin
-PATH DEFAULT=${PATH}:${HOME}/.local/bin
 #PATH DEFAULT=${PATH}:/opt/cabal/1.20/bin
 #PATH DEFAULT=${PATH}:/opt/ghc/7.8.4/bin
 #PATH DEFAULT=${PATH}:${XDG_BIN_HOME}/boost
-PATH DEFAULT=${PATH}:${XDG_STATE_HOME}/npm/bin
 #PATH DEFAULT=${PATH}:/usr/include
 #PATH DEFAULT=${PATH}:/usr/local/lib 
 #PATH DEFAULT=${PATH}:${BOOST_ROOT}/stage/lib
-PATH DEFAULT=${PATH}:/opt/android-sdk/tools
-PATH DEFAULT=${PATH}:/opt/android-sdk/tools/bin
-PATH DEFAULT=${PATH}:/opt/android-sdk/platform-tools
+
+PATH DEFAULT=${PATH}:${XDG_DATA_HOME}/npm/bin
 PATH DEFAULT=${PATH}:${CARGO_HOME}/bin
 PATH DEFAULT=${PATH}:${HOME}/Machine/bin
+PATH DEFAULT=${PATH}:/opt/bin
+PATH DEFAULT=${PATH}:${HOME}/.cabal/bin
+PATH DEFAULT=${PATH}:${HOME}/.local/bin
+
+PATH DEFAULT=${PATH}:${ANDROID_SDK_ROOT}/emulator
+PATH DEFAULT=${PATH}:${ANDROID_SDK_ROOT}/tools
+PATH DEFAULT=${PATH}:${ANDROID_SDK_ROOT}/tools/bin
+PATH DEFAULT=${PATH}:${ANDROID_SDK_ROOT}/platform-tools
+
+#PATH DEFAULT=${PATH}:/opt/android-sdk/tools
+#PATH DEFAULT=${PATH}:/opt/android-sdk/tools/bin
+#PATH DEFAULT=${PATH}:/opt/android-sdk/platform-tools
+
+
 
