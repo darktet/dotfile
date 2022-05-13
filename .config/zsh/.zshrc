@@ -263,8 +263,6 @@ function __calc_plugin {
     zcalc -f -e "$*"
 }
 
-[ -z "$TMUX" ] && command -v tmux > /dev/null && TERM=xterm-256color && exec tmux
-
 # Debug end
 if [ 1 -eq "$ZBUG" ]; then
   unsetopt XTRACE

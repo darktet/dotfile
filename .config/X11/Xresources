@@ -93,6 +93,100 @@ URxvt.color13 : #5350b9
 URxvt.color14 : #0f7ddb
 URxvt.color15 : #ffffff
 
+! Dwm color
+
+dwm.normfgcolor                : #bababa
+dwm.normbgcolor                : #111111
+dwm.normbordercolor            : #292d3e
+dwm.normfloatcolor             : #292d3e
+
+dwm.selfgcolor                 : #ffffff
+dwm.selbgcolor                 : #f81118
+dwm.selbordercolor             : #111111
+dwm.selfloatcolor              : #f81118
+
+dwm.titlenormfgcolor           : #bababa
+dwm.titlenormbgcolor           : #292d3e
+dwm.titlenormbordercolor       : #292d3e
+dwm.titlenormfloatcolor        : #292d3e
+
+dwm.titleselfgcolor            : #ffffff
+dwm.titleselbgcolor            : #f81118
+dwm.titleselbordercolor        : #292d3e
+dwm.titleselfloatcolor         : #f81118
+
+dwm.tagsnormfgcolor            : #bbbbbb
+dwm.tagsnormbgcolor            : #111111
+dwm.tagsnormbordercolor        : #292d3e
+dwm.tagsnormfloatcolor         : #292d3e
+
+dwm.tagsselfgcolor             : #bbbbbb
+dwm.tagsselbgcolor             : #f81118
+dwm.tagsselbordercolor         : #292d3e
+dwm.tagsselfloatcolor          : #f81118
+
+dwm.hidfgcolor                 : #005577
+dwm.hidbgcolor                 : #222222
+dwm.hidbordercolor             : #005577
+dwm.hidfloatcolor              : #f76e0c
+
+dwm.urgfgcolor                 : #bbbbbb
+dwm.urgbgcolor                 : #222222
+dwm.urgbordercolor             : #ff0000
+dwm.urgfloatcolor              : #db8fd9
+
+dwm.normTTBbgcolor             : #111111
+dwm.normLTRbgcolor             : #111111
+dwm.normMONObgcolor            : #111111
+dwm.normGRIDbgcolor            : #111111
+dwm.normGRD1bgcolor            : #111111
+dwm.normGRD2bgcolor            : #111111
+dwm.normGRDMbgcolor            : #f81118
+dwm.normHGRDbgcolor            : #f81118
+dwm.normDWDLbgcolor            : #111111
+dwm.normSPRLbgcolor            : #111111
+dwm.normfloatbgcolor           : #292d3e
+dwm.actTTBbgcolor              : #292d3e
+dwm.actLTRbgcolor              : #292d3e
+dwm.actMONObgcolor             : #292d3e
+dwm.actGRIDbgcolor             : #292d3e
+dwm.actGRD1bgcolor             : #292d3e
+dwm.actGRD2bgcolor             : #292d3e
+dwm.actGRDMbgcolor             : #292d3e
+dwm.actHGRDbgcolor             : #292d3e
+dwm.actDWDLbgcolor             : #292d3e
+dwm.actSPRLbgcolor             : #292d3e
+dwm.actfloatbgcolor            : #292d3e
+dwm.selTTBbgcolor              : #f81118
+dwm.selLTRbgcolor              : #f81118
+dwm.selMONObgcolor             : #f81118
+dwm.selGRIDbgcolor             : #f81118
+dwm.selGRD1bgcolor             : #f81118
+dwm.selGRD2bgcolor             : #f81118
+dwm.selGRDMbgcolor             : #f81118
+dwm.selHGRDbgcolor             : #f81118
+dwm.selDWDLbgcolor             : #f81118
+dwm.selSPRLbgcolor             : #f81118
+dwm.selfloatbgcolor            : #f81118
+
+
+!dwm.color0  : #1f1f1f
+!dwm.color1  : #f81118
+!dwm.color2  : #55ff55
+!dwm.color3  : #fded02
+!dwm.color4  : #2a84d2
+!dwm.color5  : #4e5ab7
+!dwm.color6  : #1081d6
+!dwm.color7  : #d6dbe5
+!dwm.color8  : #d6dbe5
+!dwm.color9  : #de352e
+!dwm.color10 : #1dd361
+!dwm.color11 : #f3bd09
+!dwm.color12 : #1081d6
+!dwm.color13 : #5350b9
+!dwm.color14 : #0f7ddb
+!dwm.color15 : #ffffff
+
 ! Xterm emulation
 
 URxvt.termName: xterm-256color
